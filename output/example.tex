@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---- Packages -------------------------------------------------------------
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+\definecolor{accent}{HTML}{2E5AAC}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+}
+
+% ---- Section styling ------------------------------------------------------
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0em}{}[\color{accent}\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=2pt}
+\pagestyle{empty}
+
+% ---- Helper for an experience/education entry -----------------------------
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill \textit{#2}\\[1pt]
+  \textit{#3} \hfill #4\\[2pt]
+}
+
+\begin{document}
+
+% ===== Header ==============================================================
+\begin{center}
+  {\Huge\bfseries Priyanshu Naudiyal}\\[4pt]
+  Software Engineer\\[6pt]
+  \small
+  Bengaluru, India
+$\;|\;$\faEnvelope\ \href{mailto:you@example.com}{you@example.com}$\;|\;$\faPhone\ +91 90000 00000$\;|\;$\faGlobe\ \href{https://your-site.dev}{https://your-site.dev}$\;|\;$\faLinkedin\ \href{https://linkedin.com/in/your-handle}{https://linkedin.com/in/your-handle}$\;|\;$\faGithub\ \href{https://github.com/your-handle}{https://github.com/your-handle}\end{center}
+
+% ===== Summary ============================================================
+\section{Summary}
+Backend-focused software engineer with experience building scalable APIs, document-processing pipelines and AI-powered services. Comfortable across the stack with a strong bias toward clean, well-tested systems.
+
+
+% ===== Experience =========================================================
+\section{Experience}
+\entry{Senior Software Engineer}{2024 - Present}{Annex Tech}{Remote}
+\begin{itemize}
+  \item Built a FastAPI document-intelligence platform handling PDF, DOCX and OCR extraction.
+  \item Designed an embedding pipeline and vector search improving retrieval accuracy by 30\%.
+  \item Led migration to async database connections, cutting p95 latency by 40\%.
+\end{itemize}
+\vspace{4pt}
+\entry{Software Engineer}{2021 - 2024}{Previous Company}{Bengaluru, India}
+\begin{itemize}
+  \item Developed and maintained microservices serving 1M+ daily requests.
+  \item Introduced CI/CD pipelines reducing deployment time from hours to minutes.
+\end{itemize}
+\vspace{4pt}
+
+% ===== Projects ===========================================================
+\section{Projects}
+\noindent\textbf{Resume Builder} \; \href{https://github.com/your-handle/resume-builder}{\faLink}\hfill \textit{Python, Jinja2, LaTeX}\\[2pt]
+A CLI that renders LaTeX resume templates from structured YAML data and compiles them to polished PDFs.
+
+\vspace{4pt}
+
+% ===== Education ==========================================================
+\section{Education}
+\entry{Your University}{2017 - 2021}{B.Tech, Computer Science}{India}
+CGPA: 8.5/10\\[2pt]\vspace{2pt}
+
+% ===== Skills =============================================================
+\section{Skills}
+\begin{itemize}[label={}]
+  \item \textbf{Languages:} Python, TypeScript, Go, SQL
+  \item \textbf{Frameworks:} FastAPI, React, Node.js
+  \item \textbf{Tools:} Docker, PostgreSQL, Redis, Git, AWS
+\end{itemize}
+
+\end{document}

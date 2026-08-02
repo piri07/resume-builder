@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---- Packages -------------------------------------------------------------
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+\definecolor{accent}{HTML}{2E5AAC}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+}
+
+% ---- Section styling ------------------------------------------------------
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0em}{}[\color{accent}\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=2pt}
+\pagestyle{empty}
+
+% ---- Helper for an experience/education entry -----------------------------
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill \textit{#2}\\[1pt]
+  \textit{#3} \hfill #4\\[2pt]
+}
+
+\begin{document}
+
+% ===== Header ==============================================================
+\begin{center}
+  {\Huge\bfseries \VAR{ name }}\\[4pt]
+  \VAR{ title }\\[6pt]
+  \small
+  \VAR{ contact.location }
+  \BLOCK{ if contact.email }$\;|\;$\faEnvelope\ \href{mailto:\VAR{ contact.email }}{\VAR{ contact.email }}\BLOCK{ endif }
+  \BLOCK{ if contact.phone }$\;|\;$\faPhone\ \VAR{ contact.phone }\BLOCK{ endif }
+  \BLOCK{ if contact.website }$\;|\;$\faGlobe\ \href{\VAR{ contact.website }}{\VAR{ contact.website }}\BLOCK{ endif }
+  \BLOCK{ if contact.linkedin }$\;|\;$\faLinkedin\ \href{\VAR{ contact.linkedin }}{\VAR{ contact.linkedin }}\BLOCK{ endif }
+  \BLOCK{ if contact.github }$\;|\;$\faGithub\ \href{\VAR{ contact.github }}{\VAR{ contact.github }}\BLOCK{ endif }
+\end{center}
+
+% ===== Summary ============================================================
+\BLOCK{ if summary }
+\section{Summary}
+\VAR{ summary }
+\BLOCK{ endif }
+
+% ===== Experience =========================================================
+\BLOCK{ if experience }
+\section{Experience}
+\BLOCK{ for job in experience }
+\entry{\VAR{ job.role }}{\VAR{ job.dates }}{\VAR{ job.company }}{\VAR{ job.location }}
+\BLOCK{ if job.highlights }
+\begin{itemize}
+  \BLOCK{ for point in job.highlights }
+  \item \VAR{ point }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+\vspace{4pt}
+\BLOCK{ endfor }
+\BLOCK{ endif }
+
+% ===== Projects ===========================================================
+\BLOCK{ if projects }
+\section{Projects}
+\BLOCK{ for project in projects }
+\noindent\textbf{\VAR{ project.name }}\BLOCK{ if project.link } \; \href{\VAR{ project.link }}{\faLink}\BLOCK{ endif }\hfill \textit{\VAR{ project.tech }}\\[2pt]
+\VAR{ project.description }
+\vspace{4pt}
+\BLOCK{ endfor }
+\BLOCK{ endif }
+
+% ===== Education ==========================================================
+\BLOCK{ if education }
+\section{Education}
+\BLOCK{ for edu in education }
+\entry{\VAR{ edu.institution }}{\VAR{ edu.dates }}{\VAR{ edu.degree }}{\VAR{ edu.location }}
+\BLOCK{ if edu.details }\VAR{ edu.details }\\[2pt]\BLOCK{ endif }
+\vspace{2pt}
+\BLOCK{ endfor }
+\BLOCK{ endif }
+
+% ===== Skills =============================================================
+\BLOCK{ if skills }
+\section{Skills}
+\begin{itemize}[label={}]
+  \BLOCK{ for group in skills }
+  \item \textbf{\VAR{ group.category }:} \VAR{ group['items'] | join(', ') }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+
+\end{document}

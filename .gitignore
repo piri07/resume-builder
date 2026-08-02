@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+
+# LaTeX build artifacts
+output/*.aux
+output/*.log
+output/*.out
+output/*.fls
+output/*.fdb_latexmk

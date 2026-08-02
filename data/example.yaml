@@ -1,0 +1,54 @@
+name: Priyanshu Naudiyal
+title: Software Engineer
+contact:
+  location: Bengaluru, India
+  email: you@example.com
+  phone: "+91 90000 00000"
+  website: https://your-site.dev
+  linkedin: https://linkedin.com/in/your-handle
+  github: https://github.com/your-handle
+
+summary: >
+  Backend-focused software engineer with experience building scalable APIs,
+  document-processing pipelines and AI-powered services. Comfortable across
+  the stack with a strong bias toward clean, well-tested systems.
+
+experience:
+  - role: Senior Software Engineer
+    company: Annex Tech
+    location: Remote
+    dates: 2024 - Present
+    highlights:
+      - Built a FastAPI document-intelligence platform handling PDF, DOCX and OCR extraction.
+      - Designed an embedding pipeline and vector search improving retrieval accuracy by 30%.
+      - Led migration to async database connections, cutting p95 latency by 40%.
+  - role: Software Engineer
+    company: Previous Company
+    location: Bengaluru, India
+    dates: 2021 - 2024
+    highlights:
+      - Developed and maintained microservices serving 1M+ daily requests.
+      - Introduced CI/CD pipelines reducing deployment time from hours to minutes.
+
+projects:
+  - name: Resume Builder
+    tech: Python, Jinja2, LaTeX
+    link: https://github.com/your-handle/resume-builder
+    description: >
+      A CLI that renders LaTeX resume templates from structured YAML data and
+      compiles them to polished PDFs.
+
+education:
+  - institution: Your University
+    degree: B.Tech, Computer Science
+    location: India
+    dates: 2017 - 2021
+    details: "CGPA: 8.5/10"
+
+skills:
+  - category: Languages
+    items: [Python, TypeScript, Go, SQL]
+  - category: Frameworks
+    items: [FastAPI, React, Node.js]
+  - category: Tools
+    items: [Docker, PostgreSQL, Redis, Git, AWS]
