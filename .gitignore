@@ -1,6 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+.DS_Store
 
 # LaTeX build artifacts
 output/*.aux
@@ -8,3 +9,15 @@ output/*.log
 output/*.out
 output/*.fls
 output/*.fdb_latexmk
+
+# Rendered resumes / personal output — never commit generated resumes
+output/*.pdf
+output/*.tex
+
+# Personal resume data — only the generic samples are tracked.
+# Any other data file (real resumes) is ignored by default.
+data/*.yaml
+data/*.yml
+data/*.json
+!data/example.yaml
+!data/sample.yaml
