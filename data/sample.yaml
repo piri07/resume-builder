@@ -1,47 +1,55 @@
-name: Jordan Rivera
-title: Data Engineer
+certifications:
+- Sample Certified Data Engineer
+competencies:
+- category: Languages & Query
+  items:
+  - Python
+  - Advanced SQL
+  - BigQuery
+- category: Cloud & Pipelines
+  items:
+  - Google Cloud Platform
+  - BigQuery
+  - ETL/ELT pipeline design
+  - partitioned data models
+- category: Data Quality & Governance
+  items:
+  - Automated validation & reconciliation frameworks
+  - row-level security policies
+  - data cataloging
+- category: Visualization & Analytics
+  items:
+  - Power BI
+  - Looker Studio
+  - Facebook
 contact:
   email: jordan.rivera@example.com
-  phone: "+1 555 010 2020"
   linkedin: https://www.linkedin.com/in/your-handle/
-
-summary: >
-  Data Engineer with several years of experience building and optimizing large-scale cloud
-  data pipelines, data quality frameworks, and analytics dashboards for enterprise operations.
-
-competencies:
-  - category: "Languages & Query"
-    items: [Python, Advanced SQL, BigQuery]
-  - category: "Cloud & Pipelines"
-    items: [Google Cloud Platform, BigQuery, "ETL/ELT pipeline design", partitioned data models]
-  - category: "Data Quality & Governance"
-    items: ["Automated validation & reconciliation frameworks", row-level security policies, data cataloging]
-  - category: "Visualization & Analytics"
-    items: [Power BI, Looker Studio]
-
-experience:
-  - company: Example Analytics
-    role: Data Engineer
-    location: Remote
-    dates: 2023 - Present
-    highlights:
-      - Designed and optimized cloud ETL pipelines processing multi-terabyte datasets with partitioned tables and analytical data models.
-      - Built automated data quality validation frameworks to detect duplicate records, null values, and schema drift, cutting manual debugging effort significantly.
-      - Implemented row-level security policies to segregate dashboard access across regions and teams.
-      - Refactored SQL queries and reporting workflows, reducing dashboard refresh latency and query execution time.
-  - company: Previous Company
-    role: Consultant - Data Engineering
-    location: Bengaluru, India
-    dates: 2020 - 2023
-    highlights:
-      - Architected and maintained SQL-based ETL pipelines supporting analytics initiatives for multiple enterprise clients.
-      - Designed automated data validation and profiling pipelines in Python to continuously monitor data quality.
-      - Served as technical SME across cross-functional projects and delivered internal training sessions.
-
+  phone: +1 555 010 2020
 education:
-  - degree: Bachelor of Technology, Information Technology
-    institution: Your University
-    dates: 2016 - 2020
+- dates: 2016 - 2020
+  degree: Bachelor of Technology, Information Technology
+  institution: Your University
+experience:
+- company: Example Analytics
+  dates: 2023 - Present
+  highlights:
+  - Designed and optimized cloud ETL pipelines processing multi-terabyte datasets with partitioned tables and analytical data models.
+  - Built automated data quality validation frameworks to detect duplicate records, null values, and schema drift, cutting manual debugging effort significantly.
+  - Implemented row-level security policies to segregate dashboard access across regions and teams.
+  - Refactored SQL queries and reporting workflows, reducing dashboard refresh latency and query execution time.
+  location: Remote
+  role: Data Engineer
+- company: Previous Company
+  dates: 2020 - 2023
+  highlights:
+  - Architected and maintained SQL-based ETL pipelines supporting analytics initiatives for multiple enterprise clients.
+  - Designed automated data validation and profiling pipelines in Python to continuously monitor data quality.
+  - Served as technical SME across cross-functional projects and delivered internal training sessions.
+  location: Bengaluru, India
+  role: Consultant - Data Engineering
+name: Jordan Rivera
+summary: 'Data Engineer with several years of experience building and optimizing large-scale cloud data pipelines, data quality frameworks, and analytics dashboards for enterprise operations.
 
-certifications:
-  - Sample Certified Data Engineer
+  '
+title: Data Engineer
