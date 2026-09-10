@@ -23,11 +23,11 @@ from build import latex_escape, make_env, compile_pdf
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 TEMPLATE_DIR = ROOT / "templates"
-OUTPUT_DIR = ROOT / "output"
+OUTPUT_DIR = ROOT / "output" / "pdf"
 WEB_DIR = ROOT / "web"
 
 DATA_DIR.mkdir(exist_ok=True)
-OUTPUT_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 app = Flask(__name__)
 

@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper]{article}
 
 % ---- Packages -------------------------------------------------------------
-\usepackage[margin=1.25cm]{geometry}
+\usepackage[margin=1.15cm]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
@@ -17,9 +17,9 @@
 \titleformat{\section}
   {\large\bfseries\color{accent}}
   {}{0em}{}[\color{accent}\titlerule]
-\titlespacing{\section}{0pt}{5pt}{2pt}
+\titlespacing{\section}{0pt}{4pt}{2pt}
 
-\setlist[itemize]{leftmargin=1.1em, itemsep=1pt, topsep=1pt, parsep=0pt}
+\setlist[itemize]{leftmargin=1.1em, itemsep=0.5pt, topsep=1pt, parsep=0pt}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
@@ -66,6 +66,24 @@
   \BLOCK{ endfor }
 \end{itemize}
 \vspace{2pt}
+\BLOCK{ endfor }
+\BLOCK{ endif }
+
+% ===== Projects ===========================================================
+\BLOCK{ if projects }
+\section{Selected Projects}
+\BLOCK{ for project in projects }
+\textbf{\VAR{ project.name }} \hfill \textit{\VAR{ project.tech }}\\[-1pt]
+\BLOCK{ if project.highlights }
+\begin{itemize}
+  \BLOCK{ for point in project.highlights }
+  \item \VAR{ point }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ elif project.description is defined }
+\VAR{ project.description }
+\BLOCK{ endif }
+\vspace{1pt}
 \BLOCK{ endfor }
 \BLOCK{ endif }
 

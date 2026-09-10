@@ -182,6 +182,9 @@ function renderEditor() {
   // --- Experience ---
   root.appendChild(experienceSection());
 
+  // --- Projects ---
+  root.appendChild(projectsSection());
+
   // --- Education ---
   root.appendChild(educationSection());
 
@@ -261,6 +264,42 @@ function experienceSection() {
   fs.appendChild(el("button", { class: "ghost small", onclick: () => {
     state.experience.push({ company: "", role: "", location: "", dates: "", highlights: [""] });
     renderEditor(); } }, "+ Add role"));
+  return fs;
+}
+
+function projectsSection() {
+  const fs = el("fieldset");
+  fs.appendChild(el("legend", {}, "Projects"));
+  state.projects = state.projects || [];
+  state.projects.forEach((project, pj) => {
+    project.highlights = project.highlights || [];
+    const card = el("div", { class: "card" });
+    const head = el("div", { class: "card-head" });
+    head.appendChild(el("span", { class: "title" }, project.name || "New project"));
+    head.appendChild(el("button", { class: "danger small",
+      onclick: () => { state.projects.splice(pj, 1); renderEditor(); } }, "Remove"));
+    card.appendChild(head);
+
+    const fields = el("div", { class: "row" });
+    fields.appendChild(textField("Project name", project.name, v => project.name = v));
+    fields.appendChild(textField("Technologies", project.tech, v => project.tech = v));
+    card.appendChild(fields);
+
+    card.appendChild(el("label", {}, "Highlights"));
+    project.highlights.forEach((pt, pi) => {
+      const b = el("div", { class: "bullet" });
+      b.appendChild(el("textarea", { value: pt, oninput: e => project.highlights[pi] = e.target.value }, pt));
+      b.appendChild(el("button", { class: "danger small",
+        onclick: () => { project.highlights.splice(pi, 1); renderEditor(); } }, "x"));
+      card.appendChild(b);
+    });
+    card.appendChild(el("button", { class: "ghost small", onclick: () => {
+      project.highlights.push(""); renderEditor(); } }, "+ Add bullet"));
+    fs.appendChild(card);
+  });
+  fs.appendChild(el("button", { class: "ghost small", onclick: () => {
+    state.projects.push({ name: "", tech: "", highlights: [""] }); renderEditor();
+  } }, "+ Add project"));
   return fs;
 }
 
@@ -367,7 +406,7 @@ $("#newBtn").addEventListener("click", async () => {
   state = {
     name: "Your Name", title: "Your Title",
     contact: { email: "", phone: "", linkedin: "" },
-    summary: "", competencies: [], experience: [], education: [], certifications: []
+    summary: "", competencies: [], experience: [], projects: [], education: [], certifications: []
   };
   currentName = clean;
   await save();

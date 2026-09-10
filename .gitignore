@@ -9,6 +9,7 @@ output/*.log
 output/*.out
 output/*.fls
 output/*.fdb_latexmk
+output/pdf/
 
 # Rendered resumes / personal output — never commit generated resumes
 output/*.pdf
